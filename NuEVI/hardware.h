@@ -1,3 +1,5 @@
+// Edited by kmw3kx for Uno pin mapping
+
 #ifndef __HARDWARE_H
 #define __HARDWARE_H
 
@@ -6,15 +8,16 @@
 //#define SEAMUS
 
 //#define I2CSCANNER
+/*
 
 #if defined(NURAD) //NuRAD <<<<<<<<<<<<<<<<<<<<<<<
 
 // Pin definitions
 
-// Teensy pins
+// *UNO* pins
 
 //Capacitive sensor pins (on-board teensy)
-#define bitePin 17
+#define bitePin  // og 17
 #define extraPin 16
 #define pbUpPin 1
 #define pbDnPin 0
@@ -37,10 +40,11 @@
 #define sLedPin 23
 #define statusLedPin 13
 
-//Pins for WIDI board management
+//Pins for WIDI board management (what is this for?)
 #define widiJumperPin 28
 #define widiJumperGndPin 27
 #define widiPowerPin 33
+
 
 //Hacky solder in patch change pin
 #define patchPinEVI 32
@@ -91,16 +95,18 @@
 #define LHp3Pin 4
 
 #else //NuEVI <<<<<<<<<<<<<<<<<<<<<<<
+*/
 
 // Pin definitions
 
-// Teensy pins
+// *UNO Pins*
 
+/*
 #define specialKeyPin 0       // SK or S2
 #define halfPitchBendKeyPin 1 // PD or S1
 
 
-//Capacitive sensor pins (on-board teensy)
+//Capacitive sensor pins (on-board teensy) -- not a priority
 #define bitePin 17
 #define extraPin 16
 #define pbUpPin 23
@@ -111,7 +117,8 @@
 #define biteJumperPin 11
 #define biteJumperGndPin 12
 
-//Pins for WIDI board management
+
+//Pins for WIDI board management -- IDK
 #define widiJumperPin 28
 #define widiJumperGndPin 27
 #define widiPowerPin 33
@@ -119,29 +126,34 @@
 //Hacky solder in patch change pin
 #define patchPinEVI 32
 #define lockGlidePin 25
+*/
 
 //Analog pressure sensors. Breath and optional bite
 #define breathSensorPin A0
-#define bitePressurePin A7
+#define bitePressurePin A1 // og A7
 
 //Digital pins for menu buttons
-#define dPin 3
+#define dPin 2
 #define ePin 4
-#define uPin 5
-#define mPin 6
+#define uPin 7
+#define mPin 8
 
 //Output pins for LEDs (breath, power, status)
-#define bLedPin 10
-#define pLedPin 9
-#define statusLedPin 13
+#define bLedPin 10 // this works
+#define pLedPin 13 // og 9
+#define statusLedPin 13 // this is good; maybe should be power?
 
-//Analog input for measuring voltage
+/*
+//Analog input for measuring voltage -- but why tho
 #define vMeterPin A11
+*/
 
-//DAC outputs for analog and pwm
+/*
+//DAC outputs for analog and pwm - don't need; gonna use the breath output pin for this
 #define dacPin A14
 #define pwmDacPin 20
-
+*/
+ 
 //Which serial port to use for MIDI
 #define MIDI_SERIAL Serial3
 #define WIDI_SERIAL Serial2

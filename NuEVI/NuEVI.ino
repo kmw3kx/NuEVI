@@ -15,9 +15,10 @@
 /*
 NAME:                 NuEVI
 WRITTEN BY:           JOHAN BERGLUND
-DATE:                 2018-04-19
+EDITED BY:            Bob Kammauff (kmw3kx)
+DATE:                 2024-12-03
 FILE SAVED AS:        NuEVI.ino
-FOR:                  PJRC Teensy 3.2 and a MPR121 capactive touch sensor board.
+FOR:                  *Arduino UNO* and a MPR121 capactive touch sensor board.
                       Uses an SSD1306 controlled OLED display communicating over I2C.
 PROGRAMME FUNCTION:   EVI Wind Controller using the Freescale MP3V5004GP breath sensor
                       and capacitive touch keys. Output to both USB MIDI and DIN MIDI.
@@ -41,9 +42,11 @@ PROGRAMME FUNCTION:   EWI Wind Controller using the Freescale MP3V5004GP breath 
 
 
 //Make sure compiler is set to the appropriate platform
+/*
 #ifndef __MK20DX256__
   #error "Wrong target platform. Please set to Teensy 3.1/3.2 (MK20DX256)."
 #endif
+*/
 
 #if !defined(USB_MIDI) && !defined(USB_MIDI_SERIAL)
   #error "USB MIDI not enabled. Please set USB type to 'MIDI' or 'Serial + MIDI'."
